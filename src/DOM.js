@@ -1,6 +1,6 @@
 import { weatherApi } from "./weather_api";
-let defaultValue = "mumbai";
 
+let searchValue = "mumbai";
 const switching = () => {
   const sliderDiv = document.querySelector(".switcher");
   const checkbox = document.getElementById("check");
@@ -9,7 +9,7 @@ const switching = () => {
   slider.addEventListener("click", () => {
     {
       checkbox.classList.toggle("active");
-      func();
+      funcFetcher();
     }
   });
 };
@@ -31,12 +31,12 @@ const formInteraction = () => {
   const searchBtn = document.getElementById("searchButton");
   searchBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    func();
+    funcFetcher();
   });
 };
 
-const func = () => {
-  let searchValue = document.getElementById("searchBar").value || defaultValue;
+const funcFetcher = () => {
+  searchValue = document.getElementById("searchBar").value || searchValue;
   weatherApi(
     `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=cc4487625a762b0487d81b80ddd64e2b`
   ).then((data) => {
@@ -48,10 +48,21 @@ const func = () => {
 
 const updateImage = (data) => {
   const content = document.getElementById("content");
-  if (data.weather[0].main === "Haze") {
-    content.style.backgroundColor = "red";
-  } else {
-    content.style.background = "blue";
+  let weather = data.weather[0].main;
+  if (weather === "Haze") {
+    //content.style.backgroundImage =
+    //  "url('./assets/jaleel-akbash-Slh0Tx1MRNA-unsplash.jpg')";
+    content.style.backgroundImage =
+      "url('../src/assets/jaleel-akbash-Slh0Tx1MRNA-unsplash.jpg')";
+  } else if (weather === "Rain" || weather === "Drizzle") {
+    content.style.background =
+      "url('../src/assets/anna-atkins-rNBaaxyeWWM-unsplash.jpg')";
+  } else if (weather === "Clouds") {
+    content.style.background =
+      "url('../src/assets/rodion-kutsaev-8P-uQaTd8rw-unsplash.jpg')";
+  } else if (weather === "Mist") {
+    content.style.background =
+      "url('../src/assets/dave-hoefler-od287vQyufw-unsplash.jpg')";
   }
 };
 
@@ -73,15 +84,15 @@ const DOMupdate = (data) => {
 
   temperature.textContent =
     checkbox.classList == "active"
-      ? celsiusToFahrenheit(data.main.temp) + "F"
-      : fahrToCelsius(data.main.temp) + "C";
+      ? celsiusToFahrenheit(data.main.temp) + "°F"
+      : fahrToCelsius(data.main.temp) + "°C";
 
   atmosphere.textContent = data.weather[0].main;
 
   feelsLike.textContent =
     checkbox.classList == "active"
-      ? celsiusToFahrenheit(data.main.feels_like) + "F"
-      : fahrToCelsius(data.main.feels_like) + "C";
+      ? celsiusToFahrenheit(data.main.feels_like) + "°F"
+      : fahrToCelsius(data.main.feels_like) + "°C";
 
   humidity.textContent = data.main.humidity + "%";
   windSpeed.textContent =
@@ -89,4 +100,4 @@ const DOMupdate = (data) => {
   visibility.textContent = data.visibility / 1000 + "km";
 };
 
-export { switching, formInteraction };
+export { switching, formInteraction, funcFetcher };
