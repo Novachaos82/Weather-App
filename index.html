@@ -5,7 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script defer src="app.js"></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <div id="content">
+      <div class="container">
+        <div class="heading">
+          <form action="" id="form" class="searchbarDiv">
+            <input id="searchBar" type="text" />
+            <button
+              id="searchButton"
+              class="fa-solid fa-magnifying-glass"
+            ></button>
+          </form>
+          <div class="switcher">
+            <label for="checkbox" class="switch"></label>
+            <input type="checkbox" unchecked />
+            <span class="slider"></span>
+          </div>
+        </div>
+        <div class="main-text">
+          <div class="main-left">
+            <h1 class="cityName">Something</h1>
+            <h1 class="temperature">20</h1>
+            <div class="atmosphere">Haze</div>
+          </div>
+          <div class="main-right"><i class="fa-solid fa-cloud"></i></div>
+        </div>
+        <div class="additional-text">
+          <div class="feelsLike">
+            <i class="fa-solid fa-temperature-full"></i>
+            <div class="text">
+              <p>feels like</p>
+              <p class="info">76</p>
+            </div>
+          </div>
+          <div class="humidity">
+            <i class="fa-solid fa-droplet"></i>
+            <div class="text">
+              <p>humidity</p>
+              <p class="info">54</p>
+            </div>
+          </div>
+          <div class="windSpeed">
+            <i class="fa-solid fa-wind"></i>
+            <div class="text">
+              <p>Wind Speed</p>
+              <p class="info">12</p>
+            </div>
+          </div>
+          <div class="visibility">
+            <i class="fa-regular fa-eye"></i>
+            <div class="text">
+              <p>visibility</p>
+              <p class="info">23</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
