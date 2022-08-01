@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+}
+#content {
+  background: black;
+  height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 500px;
+  height: 600px;
+  background: rgba(255, 255, 255, 0.411);
+  color: black;
+  border-radius: 10px;
+  font-family: "Lato", sans-serif;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchbarDiv {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#searchBar {
+  position: relative;
+  width: 200px;
+  /*height: 20px;*/
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  font-size: 0.875rem;
+  padding: 4px 10px;
+}
+
+#searchButton {
+  background: transparent;
+  border: transparent;
+  color: white;
+  font-size: 1rem;
+}
+/*slider*/
+.switcher {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin: 0 10px;
+  /*display: flex;
+  justify-content: center;
+  align-items: center;*/
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ccc;
+  transition: 0.4s;
+  border-radius: 15px;
+}
+
+.switcher input {
+  display: none;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 15px;
+}
+
+input:checked + .slider {
+  background-color: palevioletred;
+}
+
+input:checked + .slider:before {
+  transform: translatex(20px);
+}
+
+/*main-content*/
+.main-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /*height: 500px;*/
+  padding: 50px 0px;
+}
+
+.main-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /*gap: 20px;*/
+  color: rgb(207, 190, 190);
+}
+
+.cityName {
+  font-size: 3rem;
+}
+.temperature {
+  font-size: 4rem;
+}
+.atmosphere {
+  font-size: 24px;
+  font-weight: bold;
+}
+.main-right {
+  font-size: 6rem;
+  color: white;
+}
+
+.additional-text {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 20px;
+  justify-content: space-around;
+  align-items: center;
+}
+/*.additional-text {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  width: 100%;
+}*/
+
+.feelsLike,
+.humidity,
+.windSpeed,
+.visibility {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.feelsLike i,
+.humidity i,
+.windSpeed i,
+.visibility i {
+  color: rgba(22, 21, 21, 0.623);
+  font-size: 30px;
+}
