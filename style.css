@@ -7,18 +7,21 @@
 body {
 }
 #content {
-  background: black;
+  background: url(../src/assets/rodion-kutsaev-8P-uQaTd8rw-unsplash.jpg);
   height: 100vh;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: cover;
+  object-fit: cover;
+  background: no-repeat center;
 }
 
 .container {
   width: 500px;
   height: 600px;
-  background: rgba(255, 255, 255, 0.411);
+  background: hsla(0, 0%, 100%, 0.603);
   color: black;
   border-radius: 10px;
   font-family: "Lato", sans-serif;
@@ -52,9 +55,10 @@ body {
 }
 
 #searchButton {
+  cursor: pointer;
   background: transparent;
   border: transparent;
-  color: white;
+  color: black;
   font-size: 1rem;
 }
 /*slider*/
@@ -76,7 +80,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #ccc;
+  background: rgb(0, 0, 0);
   transition: 0.4s;
   border-radius: 15px;
 }
@@ -92,7 +96,7 @@ body {
   width: 20px;
   left: 4px;
   bottom: 5px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   transition: 0.4s;
   border-radius: 15px;
   text-align: center;
@@ -101,7 +105,7 @@ body {
 }
 
 input.active + .slider {
-  background-color: palevioletred;
+  background-color: #565452;
 }
 
 input.active + .slider:before {
@@ -124,7 +128,7 @@ input.active + .slider:before {
   flex-direction: column;
   justify-content: space-between;
   /*gap: 20px;*/
-  color: rgb(207, 190, 190);
+  color: black;
 }
 
 .cityName {
@@ -139,7 +143,7 @@ input.active + .slider:before {
 }
 .main-right {
   font-size: 6rem;
-  color: white;
+  color: black;
 }
 
 .additional-text {
@@ -172,6 +176,13 @@ input.active + .slider:before {
 .humidity i,
 .windSpeed i,
 .visibility i {
-  color: rgba(22, 21, 21, 0.623);
+  color: black;
   font-size: 30px;
+}
+
+.text {
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #000;
 }
