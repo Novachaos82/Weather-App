@@ -1,6 +1,6 @@
 # Weather-App
 
-##Used HTML, CSS, Vanilla JavaScript to make a weather app
+## Used HTML, CSS, Vanilla JavaScript to make a weather app
 
 - Uses async/await for api concepts.
 - Uses [OpenWeather's](https://openweathermap.org/) Weather API.
