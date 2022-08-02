@@ -1,5 +1,5 @@
 import { weatherApi } from "./weather_api";
-
+/*default search value on page load*/
 let searchValue = "mumbai";
 const switching = () => {
   const sliderDiv = document.querySelector(".switcher");
@@ -14,6 +14,7 @@ const switching = () => {
   });
 };
 
+/*form submit */
 const formInteraction = () => {
   const searchBtn = document.getElementById("searchButton");
   searchBtn.addEventListener("click", (e) => {
@@ -23,6 +24,7 @@ const formInteraction = () => {
   });
 };
 
+/*fetcher which fetches info from async await function on weather_api.js*/
 const funcFetcher = () => {
   searchValue = document.getElementById("searchBar").value || searchValue;
   weatherApi(
@@ -34,6 +36,7 @@ const funcFetcher = () => {
   });
 };
 
+/*image update based on weather*/
 const updateImage = (data) => {
   const content = document.getElementById("content");
   let weather = data.weather[0].main;
@@ -54,6 +57,7 @@ const updateImage = (data) => {
   }
 };
 
+/*DOM updates*/
 const DOMupdate = (data) => {
   const cityName = document.querySelector(".cityName");
   const temperature = document.querySelector(".temperature");
@@ -88,20 +92,25 @@ const DOMupdate = (data) => {
     Math.round((data.wind.speed * 60 * 60) / 1000) + "Kph";
   visibility.textContent = data.visibility / 1000 + "km";
 };
+/*clear to clear content on error*/
 const clear = () => {
   document.querySelector(".main-text").style.visibility = "hidden";
   document.querySelector(".additional-text").style.visibility = "hidden";
 };
 
+/*loading the content after the error has happened*/
 const load = () => {
   document.querySelector(".main-text").style.visibility = "visible";
   document.querySelector(".additional-text").style.visibility = "visible";
 };
+
+/*kelvin to celsius*/
 const fahrToCelsius = (temp) => {
   let celsius = temp - 273.15;
   return Math.round(celsius);
 };
 
+/*kelvin to fahrenheit*/
 const celsiusToFahrenheit = (temp) => {
   let fahr = 1.8 * (temp - 273) + 32;
   return Math.round(fahr);

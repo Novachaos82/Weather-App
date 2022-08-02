@@ -1,3 +1,4 @@
+/*async function to load promises and fetch url*/
 async function weatherApi(url) {
   //  console.log(url);
 
