@@ -44,16 +44,16 @@ const updateImage = (data) => {
     //content.style.backgroundImage =
     //  "url('./assets/jaleel-akbash-Slh0Tx1MRNA-unsplash.jpg')";
     content.style.backgroundImage =
-      "url('../src/assets/jaleel-akbash-Slh0Tx1MRNA-unsplash.jpg')";
+      "url('./assets/jaleel-akbash-Slh0Tx1MRNA-unsplash.jpg')";
   } else if (weather === "Rain" || weather === "Drizzle") {
     content.style.background =
-      "url('../src/assets/anna-atkins-rNBaaxyeWWM-unsplash.jpg')";
+      "url('./assets/anna-atkins-rNBaaxyeWWM-unsplash.jpg')";
   } else if (weather === "Clouds") {
     content.style.background =
-      "url('../src/assets/rodion-kutsaev-8P-uQaTd8rw-unsplash.jpg')";
+      "url('./assets/rodion-kutsaev-8P-uQaTd8rw-unsplash.jpg')";
   } else if (weather === "Mist") {
     content.style.background =
-      "url('../src/assets/dave-hoefler-od287vQyufw-unsplash.jpg')";
+      "url('./assets/dave-hoefler-od287vQyufw-unsplash.jpg')";
   }
 };
 
