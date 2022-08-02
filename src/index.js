@@ -1,8 +1,3 @@
-import { formInteraction, funcFetcher, switching } from "./DOM";
-import { weatherApi } from "./weather_api";
+import { initialize } from "./initializeApp";
 
-console.log("test");
-funcFetcher();
-switching();
-
-formInteraction();
+initialize();
