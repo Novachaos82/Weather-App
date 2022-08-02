@@ -14,24 +14,12 @@ const switching = () => {
   });
 };
 
-const fahrToCelsius = (temp) => {
-  let celsius = temp - 273.15;
-  return Math.round(celsius);
-};
-
-const celsiusToFahrenheit = (temp) => {
-  let fahr = 1.8 * (temp - 273) + 32;
-  return Math.round(fahr);
-};
-//const fahrToCel = (data)=>{
-//    if()
-//}
-
 const formInteraction = () => {
   const searchBtn = document.getElementById("searchButton");
   searchBtn.addEventListener("click", (e) => {
     e.preventDefault();
     funcFetcher();
+    load();
   });
 };
 
@@ -79,6 +67,7 @@ const DOMupdate = (data) => {
   const visibility = document.querySelector(".visibility .info");
   if (data.cod === "404") {
     alert("city not found");
+    clear();
   }
   cityName.textContent = data.name;
 
@@ -98,6 +87,24 @@ const DOMupdate = (data) => {
   windSpeed.textContent =
     Math.round((data.wind.speed * 60 * 60) / 1000) + "Kph";
   visibility.textContent = data.visibility / 1000 + "km";
+};
+const clear = () => {
+  document.querySelector(".main-text").style.visibility = "hidden";
+  document.querySelector(".additional-text").style.visibility = "hidden";
+};
+
+const load = () => {
+  document.querySelector(".main-text").style.visibility = "visible";
+  document.querySelector(".additional-text").style.visibility = "visible";
+};
+const fahrToCelsius = (temp) => {
+  let celsius = temp - 273.15;
+  return Math.round(celsius);
+};
+
+const celsiusToFahrenheit = (temp) => {
+  let fahr = 1.8 * (temp - 273) + 32;
+  return Math.round(fahr);
 };
 
 export { switching, formInteraction, funcFetcher };
